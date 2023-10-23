@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GreetingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/comments/random', [GreetingController::class, 'randomwords']);
+
+Route::get('/comments/{words}', [GreetingController::class, 'words']);
+
+Route::get('/comments/freeword/{comment}', [GreetingController::class, 'comments']);
+
+
